@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int toplamLast(int a , int b , int c,int d,int toplam){
+int toplamLast(int a=0 , int b=0 , int c=0,int d=0,int toplam=0){
 	int topla =0;
 	if(a >= b){
 		topla = a;
@@ -53,6 +53,32 @@ int toplamCapraz=0;
 int toplamCaprazSol=0;
 int toplam=0;
 
+for (int x =0 ;x<=20;x++){
 	
+	for(int y =0 ;y<=20;y++){
+		
+	if(y>=16){
+		
+	}else{
+		toplamRight=data[x][y] * data[x][y+1] * data[x][y+2] * data[x][y+3];
+	}
+		if(x>=16){
+		
+	}else{
+		toplamDown=data[x][y] * data[x+1][y] * data[x+2][y] * data[x+3][y];
+	}
+	toplamCapraz=data[x][y] * data[x+1][y+1] * data[x+2][y+2] * data[x+3][y+3];
+	toplamCaprazSol=data[x][y] * data[x-1][y-1] * data[x-2][y-2] * data[x-3][y-3];
+	toplam=	toplamLast(toplamRight,toplamDown,toplamCapraz,toplamCaprazSol,toplam);
+	
+	}
+		
+	
+		
+	}
+
+
+
+	printf("Toplam sonuc %d",toplam);
 	return 0;
 }
